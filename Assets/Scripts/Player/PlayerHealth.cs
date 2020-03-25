@@ -17,6 +17,7 @@ namespace Player
         private Animator _anim;
         private AudioSource _playerAudio;
         private PlayerMovement _playerMovement;
+        private PlayerShooting _playerShooting;
         private bool _isDead;
         private bool _damaged;
 
@@ -25,6 +26,7 @@ namespace Player
             _anim = GetComponent<Animator>();
             _playerAudio = GetComponent<AudioSource>();
             _playerMovement = GetComponent<PlayerMovement>();
+            _playerShooting = GetComponentInChildren<PlayerShooting>();
             currentHealth = startingHealth;
         }
 
@@ -51,6 +53,8 @@ namespace Player
         private void Death()
         {
             _isDead = true;
+            
+            _playerShooting.DisableEffects();
             
             _anim.SetTrigger("Die");
 
