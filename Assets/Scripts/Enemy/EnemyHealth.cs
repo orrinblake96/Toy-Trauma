@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
+using Managers;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.PlayerLoop;
@@ -20,6 +20,7 @@ namespace Enemy
         private CapsuleCollider _capsuleCollider;
         private bool _isDead;
         private bool _isSinking;
+        private static readonly int Dead = Animator.StringToHash("Dead");
 
         private void Awake()
         {
@@ -56,7 +57,7 @@ namespace Enemy
 
             _capsuleCollider.isTrigger = true;
 
-            _anim.SetTrigger("Dead");
+            _anim.SetTrigger(Dead);
 
             _enemyAudio.clip = deathClip;
             _enemyAudio.Play();
@@ -67,7 +68,7 @@ namespace Enemy
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             _isSinking = true;
-            
+            ScoreManager.score += scoreValue;
             Destroy(gameObject, 2f);
         }
     }
