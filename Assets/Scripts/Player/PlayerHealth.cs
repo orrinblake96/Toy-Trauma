@@ -49,6 +49,14 @@ namespace Player
 
             if (currentHealth <= 0 && !_isDead) Death();
         }
+        
+        public void GainHealth()
+        {
+
+            currentHealth += 10;
+
+            healthSlider.value = currentHealth;
+        }
 
         private void Death()
         {
