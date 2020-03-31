@@ -8,12 +8,15 @@ namespace Managers
     public class PowerUpManager : MonoBehaviour
     {
         public GameObject pickupEffect;
-        public PlayerHealth playerHealth;
+        private GameObject _player;
+        private PlayerHealth _playerHealth;
         private MeshRenderer _meshRenderer;
         private SphereCollider _sphereCollider;
-
-        private void Start()
+        
+        private void Awake()
         {
+            _player = GameObject.FindGameObjectWithTag("Player");
+            _playerHealth = _player.GetComponent<PlayerHealth>();
             _sphereCollider = GetComponent<SphereCollider>();
             _meshRenderer = GetComponent<MeshRenderer>();
         }
@@ -22,7 +25,8 @@ namespace Managers
         {
             if (other.CompareTag("Player"))
             {
-                if (playerHealth.currentHealth < 100)
+                Debug.Log(_playerHealth.currentHealth);
+                if (_playerHealth.currentHealth < 100)
                 {
 //                    StartCoroutine();
                     HealthPickup();
@@ -36,7 +40,7 @@ namespace Managers
             Instantiate(pickupEffect, transform.position, transform.rotation);
             
             //Player Ability
-            playerHealth.GainHealth();
+            _playerHealth.GainHealth();
             
             //Disable so power-up is hidden
 //            _sphereCollider.enabled = false;

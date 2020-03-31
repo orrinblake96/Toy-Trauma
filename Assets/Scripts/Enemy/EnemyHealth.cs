@@ -1,8 +1,7 @@
-﻿using System;
+﻿using System.Collections;
 using Managers;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.PlayerLoop;
 
 namespace Enemy
 {
@@ -13,6 +12,7 @@ namespace Enemy
         public float sinkSpeed = 2.5f;
         public int scoreValue = 10;
         public AudioClip deathClip;
+        public GameObject powerUpPrefab;
 
         private Animator _anim;
         private AudioSource _enemyAudio;
@@ -61,6 +61,12 @@ namespace Enemy
 
             _enemyAudio.clip = deathClip;
             _enemyAudio.Play();
+            
+            if (Random.Range(0, 10) > 5) 
+            {
+                Debug.Log("Health Drop");
+                Instantiate(powerUpPrefab, transform.position, transform.rotation);
+            }
         }
         
         public void StartSinking()
