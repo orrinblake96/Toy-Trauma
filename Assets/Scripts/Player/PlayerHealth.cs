@@ -20,6 +20,7 @@ namespace Player
         private PlayerShooting _playerShooting;
         private bool _isDead;
         private bool _damaged;
+        private static readonly int Die = Animator.StringToHash("Die");
 
         private void Awake()
         {
@@ -64,7 +65,7 @@ namespace Player
             
             _playerShooting.DisableEffects();
             
-            _anim.SetTrigger("Die");
+            _anim.SetTrigger(Die);
 
             _playerAudio.clip = deathClip;
             _playerAudio.Play();

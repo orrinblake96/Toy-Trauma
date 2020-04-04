@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Player;
 using Managers;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,7 +13,8 @@ namespace Enemy
         public float sinkSpeed = 2.5f;
         public int scoreValue = 10;
         public AudioClip deathClip;
-        public GameObject powerUpPrefab;
+        public GameObject healthPowerUpPrefab;
+        public GameObject speedPowerUpPrefab;
 
         private Animator _anim;
         private AudioSource _enemyAudio;
@@ -21,6 +23,8 @@ namespace Enemy
         private bool _isDead;
         private bool _isSinking;
         private static readonly int Dead = Animator.StringToHash("Dead");
+        private GameObject _player;
+        private PlayerHealth _playerHealth;
 
         private void Awake()
         {
@@ -28,6 +32,8 @@ namespace Enemy
             _enemyAudio = GetComponent<AudioSource>();
             _hitParticles = GetComponentInChildren<ParticleSystem>();
             _capsuleCollider = GetComponent<CapsuleCollider>();
+            _player = GameObject.FindGameObjectWithTag("Player");
+            _playerHealth = _player.GetComponent<PlayerHealth>();
 
             currentHealth = startingHealth;
         }
@@ -62,10 +68,10 @@ namespace Enemy
             _enemyAudio.clip = deathClip;
             _enemyAudio.Play();
             
-            if (Random.Range(0, 10) > 5) 
+            //power-up drop chance
+            if ( (Random.Range(0, 10) > 0) && (_playerHealth.currentHealth < 40) )
             {
-                Debug.Log("Health Drop");
-                Instantiate(powerUpPrefab, transform.position, transform.rotation);
+                Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             }
         }
         

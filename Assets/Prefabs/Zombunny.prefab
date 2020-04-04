@@ -347,7 +347,9 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
-  powerUpPrefab: {fileID: 1967682603332763828, guid: d0d04f9833e1540c48c8340230b8e955,
+  healthPowerUpPrefab: {fileID: 1967682603332763828, guid: d0d04f9833e1540c48c8340230b8e955,
+    type: 3}
+  speedPowerUpPrefab: {fileID: 1967682603332763828, guid: 29beff56cc041424caa8698b3c5657f6,
     type: 3}
 --- !u!1001 &7475860278015563688
 PrefabInstance:
