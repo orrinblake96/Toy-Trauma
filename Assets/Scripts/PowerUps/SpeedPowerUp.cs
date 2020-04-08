@@ -23,7 +23,7 @@ namespace PowerUps
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && _playerMovement.speed <= 6)
             {
             
                 StartCoroutine(SpeedPickup());
@@ -37,7 +37,7 @@ namespace PowerUps
             Instantiate(pickupEffect, transform.position , transform.rotation);
             
             //Player Ability
-            _playerMovement.speed += 5.0f;
+            _playerMovement.speed += 10.0f;
             
             //Disable so power-up is hidden
             _sphereCollider.enabled = false;
@@ -45,7 +45,7 @@ namespace PowerUps
 
             //Wait for set time, then return to normal
             yield return new WaitForSeconds(10);
-            _playerMovement.speed -= 5.0f;
+            _playerMovement.speed -= 10.0f;
             
             //Destroy Powerup
             Destroy(gameObject);

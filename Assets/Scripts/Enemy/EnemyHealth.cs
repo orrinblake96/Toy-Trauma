@@ -25,6 +25,7 @@ namespace Enemy
         private static readonly int Dead = Animator.StringToHash("Dead");
         private GameObject _player;
         private PlayerHealth _playerHealth;
+        private PlayerMovement _playerMovement;
 
         private void Awake()
         {
@@ -34,6 +35,7 @@ namespace Enemy
             _capsuleCollider = GetComponent<CapsuleCollider>();
             _player = GameObject.FindGameObjectWithTag("Player");
             _playerHealth = _player.GetComponent<PlayerHealth>();
+            _playerMovement = _player.GetComponent<PlayerMovement>();
 
             currentHealth = startingHealth;
         }
@@ -69,7 +71,12 @@ namespace Enemy
             _enemyAudio.Play();
             
             //power-up drop chance
-            if ( (Random.Range(0, 10) > 0) && (_playerHealth.currentHealth < 40) )
+            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 5) && (_playerHealth.currentHealth < 40) )
+            {
+                Instantiate(healthPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
+            } 
+            
+            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 5) && (_playerMovement.speed <= 6))
             {
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             }
