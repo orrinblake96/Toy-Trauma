@@ -15,6 +15,10 @@ namespace Enemy
         public AudioClip deathClip;
         public GameObject healthPowerUpPrefab;
         public GameObject speedPowerUpPrefab;
+        public GameObject greenadePowerup;
+//        public EnemyHealthBar enemyHealthBar;
+        public GameObject healthBar;
+        private EnemyHealthBar enemyHealthBar;
 
         private Animator _anim;
         private AudioSource _enemyAudio;
@@ -36,7 +40,10 @@ namespace Enemy
             _player = GameObject.FindGameObjectWithTag("Player");
             _playerHealth = _player.GetComponent<PlayerHealth>();
             _playerMovement = _player.GetComponent<PlayerMovement>();
-
+            enemyHealthBar = healthBar.GetComponent<EnemyHealthBar>();
+            
+            
+            enemyHealthBar.SetMaxHealth(startingHealth);
             currentHealth = startingHealth;
         }
 
@@ -52,6 +59,7 @@ namespace Enemy
             _enemyAudio.Play();
 
             currentHealth -= amount;
+            enemyHealthBar.SetHealth(currentHealth);
 
             _hitParticles.transform.position = hitPoint;
             _hitParticles.Play();
@@ -79,6 +87,11 @@ namespace Enemy
             if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 5) && (_playerMovement.speed <= 6))
             {
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
+            }
+            
+            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 3))
+            {
+                Instantiate(greenadePowerup, transform.position + Vector3.up, transform.rotation);
             }
         }
         

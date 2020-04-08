@@ -8,7 +8,7 @@ namespace Player
     {
         public int startingHealth = 100;
         public int currentHealth;
-        public Slider healthSlider;
+        public PlayerHealthBar playerHealthBar;
         public Image damageImage;
         public AudioClip deathClip;
         public float flashSpeed = 5f;
@@ -29,6 +29,7 @@ namespace Player
             _playerMovement = GetComponent<PlayerMovement>();
             _playerShooting = GetComponentInChildren<PlayerShooting>();
             currentHealth = startingHealth;
+            playerHealthBar.SetMaxHealth(startingHealth);
         }
 
         private void Update()
@@ -43,8 +44,7 @@ namespace Player
             _damaged = true;
 
             currentHealth -= amount;
-
-            healthSlider.value = currentHealth;
+            playerHealthBar.SetHealth(currentHealth);
             
             _playerAudio.Play();
 
@@ -55,8 +55,7 @@ namespace Player
         {
 
             currentHealth += 10;
-
-            healthSlider.value = currentHealth;
+            playerHealthBar.SetHealth(currentHealth);
         }
 
         private void Death()
