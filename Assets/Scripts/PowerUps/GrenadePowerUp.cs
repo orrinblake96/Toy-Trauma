@@ -9,7 +9,6 @@ namespace PowerUps
         public GameObject explosionEffect;
         public float blastRadius = 5.0f;
         public float blastForce = 700;
-
         private float _countdown;
         private bool _hasExploded;
         // Start is called before the first frame update
@@ -50,6 +49,8 @@ namespace PowerUps
                     enemyHealth.TakeDamage(40, nearbyObject.transform.position);
                 }
             }
+            
+            FindObjectOfType<AudioManager>().Play("Grenade");
             
             Destroy(gameObject);
         }

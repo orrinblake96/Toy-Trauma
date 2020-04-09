@@ -6,10 +6,10 @@ namespace PowerUps
 {
     public class SpeedPowerUp : MonoBehaviour
     {
-    
+        public GameObject pickupEffect;
+
         private GameObject _player;
         private PlayerMovement _playerMovement;
-        public GameObject pickupEffect;
         private MeshRenderer _meshRenderer;
         private SphereCollider _sphereCollider;
         
@@ -35,6 +35,8 @@ namespace PowerUps
         {
             //Effects
             Instantiate(pickupEffect, transform.position , transform.rotation);
+            
+            FindObjectOfType<AudioManager>().Play("Powerup");
             
             //Player Ability
             _playerMovement.speed += 10.0f;
