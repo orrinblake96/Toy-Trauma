@@ -1,6 +1,7 @@
 ﻿using System;
 using Enemy;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -8,9 +9,17 @@ namespace Player
     {
         public int damagePerShot = 20;
         public float timeBetweenBullets = 0.15f;
+        public float timeBetweenGrenades = 1f;
         public float range = 100f;
+        public GameObject grenadePrefab;
+        public float throwForce = 40f;
+        public int grenadeAmount = 0;
+        public GameObject grenade1;
+        public GameObject grenade2;
+        public GameObject grenade3;
 
         private float _timer;
+        private float _grenadeTimer;
         private Ray _shootRay;
         private RaycastHit _shootHit;
         private int _shootableMask;
@@ -32,10 +41,37 @@ namespace Player
         private void Update()
         {
             _timer += Time.deltaTime;
+            _grenadeTimer += Time.deltaTime;
 
             if (Input.GetButton("Fire1") && _timer >= timeBetweenBullets) Shoot();
 
             if (_timer >= timeBetweenBullets * _effectsDisplayTime) DisableEffects();
+
+            if (Input.GetKey(KeyCode.Space) && _grenadeTimer >= timeBetweenGrenades && grenadeAmount > 0) ThrowGrenade();
+            
+            switch (grenadeAmount)
+            {
+                case 3:
+                    grenade1.SetActive(true);
+                    grenade2.SetActive(true);
+                    grenade3.SetActive(true);
+                    break;
+                case 2:
+                    grenade1.SetActive(true);
+                    grenade2.SetActive(true);
+                    grenade3.SetActive(false);
+                    break;
+                case 1:
+                    grenade1.SetActive(true);
+                    grenade2.SetActive(false);
+                    grenade3.SetActive(false);
+                    break;
+                default:
+                    grenade1.SetActive(false);
+                    grenade2.SetActive(false);
+                    grenade3.SetActive(false);
+                    break;
+            }
         }
 
         private void Shoot()
@@ -68,6 +104,16 @@ namespace Player
             }
 
 
+        }
+
+        private void ThrowGrenade()
+        {
+            _grenadeTimer = 0;
+            grenadeAmount -= 1;
+            
+            GameObject grenade = Instantiate(grenadePrefab, transform.position, transform.rotation);
+            Rigidbody rb = grenade.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * throwForce);
         }
         
         public void DisableEffects()

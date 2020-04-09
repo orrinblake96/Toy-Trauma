@@ -61,9 +61,9 @@ namespace Player
         private void Death()
         {
             _isDead = true;
-            
+
             _playerShooting.DisableEffects();
-            
+
             _anim.SetTrigger(Die);
 
             _playerAudio.clip = deathClip;

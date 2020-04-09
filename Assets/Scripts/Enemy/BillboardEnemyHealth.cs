@@ -5,19 +5,19 @@ namespace Enemy
 {
     public class BillboardEnemyHealth : MonoBehaviour
     {
-        public Transform camera;
-        private Camera mainCam;
+        public Transform cameraTransform;
+        private Camera _mainCam;
 
         private void Start()
         {
-            mainCam = FindObjectOfType<Camera>();
-            camera = mainCam.transform;
+            _mainCam = FindObjectOfType<Camera>();
+            cameraTransform = _mainCam.transform;
         }
 
         // Update is called once per frame
         private void LateUpdate()
         {
-            transform.LookAt(transform.position + camera.forward);
+            transform.LookAt(transform.position + cameraTransform.forward);
         }
     }
 }

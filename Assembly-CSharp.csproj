@@ -74,6 +74,8 @@
      <Compile Include="Assets\Scripts\Player\PlayerHealthBar.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerShooting.cs" />
+     <Compile Include="Assets\Scripts\PowerUps\GrenadePowerUp.cs" />
+     <Compile Include="Assets\Scripts\PowerUps\GrenadePowerUpBox.cs" />
      <Compile Include="Assets\Scripts\PowerUps\GunPowerUp.cs" />
      <Compile Include="Assets\Scripts\PowerUps\PowerUpManager.cs" />
      <Compile Include="Assets\Scripts\PowerUps\SpeedPowerUp.cs" />

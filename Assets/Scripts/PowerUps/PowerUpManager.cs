@@ -25,7 +25,6 @@ namespace Managers
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log(_playerHealth.currentHealth);
                 if (_playerHealth.currentHealth < 100)
                 {
 //                    StartCoroutine();

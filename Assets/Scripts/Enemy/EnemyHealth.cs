@@ -15,11 +15,11 @@ namespace Enemy
         public AudioClip deathClip;
         public GameObject healthPowerUpPrefab;
         public GameObject speedPowerUpPrefab;
-        public GameObject greenadePowerup;
+        public GameObject grenadePowerup;
 //        public EnemyHealthBar enemyHealthBar;
         public GameObject healthBar;
-        private EnemyHealthBar enemyHealthBar;
 
+        private EnemyHealthBar _enemyHealthBar;
         private Animator _anim;
         private AudioSource _enemyAudio;
         private ParticleSystem _hitParticles;
@@ -40,10 +40,10 @@ namespace Enemy
             _player = GameObject.FindGameObjectWithTag("Player");
             _playerHealth = _player.GetComponent<PlayerHealth>();
             _playerMovement = _player.GetComponent<PlayerMovement>();
-            enemyHealthBar = healthBar.GetComponent<EnemyHealthBar>();
+            _enemyHealthBar = healthBar.GetComponent<EnemyHealthBar>();
             
             
-            enemyHealthBar.SetMaxHealth(startingHealth);
+            _enemyHealthBar.SetMaxHealth(startingHealth);
             currentHealth = startingHealth;
         }
 
@@ -59,7 +59,7 @@ namespace Enemy
             _enemyAudio.Play();
 
             currentHealth -= amount;
-            enemyHealthBar.SetHealth(currentHealth);
+            _enemyHealthBar.SetHealth(currentHealth);
 
             _hitParticles.transform.position = hitPoint;
             _hitParticles.Play();
@@ -70,7 +70,7 @@ namespace Enemy
          private void Death()
         {
             _isDead = true;
-
+ 
             _capsuleCollider.isTrigger = true;
 
             _anim.SetTrigger(Dead);
@@ -89,9 +89,9 @@ namespace Enemy
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             }
             
-            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 3))
+            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 5))
             {
-                Instantiate(greenadePowerup, transform.position + Vector3.up, transform.rotation);
+                Instantiate(grenadePowerup, transform.position + Vector3.up, transform.rotation);
             }
         }
         

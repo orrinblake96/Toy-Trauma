@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5fefe7e29d546cfa25a77ba5d5ea64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  cameraTransform: {fileID: 0}
 --- !u!1 &5797739980176540987
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,8 +441,8 @@ Rigidbody:
   m_GameObject: {fileID: 7475860276902582747}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: Infinity
-  m_AngularDrag: Infinity
+  m_Drag: 4
+  m_AngularDrag: 4
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -639,6 +639,8 @@ MonoBehaviour:
   healthPowerUpPrefab: {fileID: 1967682603332763828, guid: d0d04f9833e1540c48c8340230b8e955,
     type: 3}
   speedPowerUpPrefab: {fileID: 1967682603332763828, guid: 29beff56cc041424caa8698b3c5657f6,
+    type: 3}
+  grenadePowerup: {fileID: 7129480796546517595, guid: b3f88afb68ca941ee9d0a8a00388b289,
     type: 3}
   healthBar: {fileID: 5797739980176540987}
 --- !u!1 &8613665216252064151
