@@ -416,7 +416,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0e554613ca2e81743a244dd20c8d44a0, type: 2}
-  - {fileID: 2100000, guid: 51d14e0fd3936be48bf8d5031d3e24c7, type: 2}
+  - {fileID: 2100000, guid: c091a728efc0246d493e046e77106654, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10084,7 +10084,7 @@ RectTransform:
   m_GameObject: {fileID: 2108997587721755969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.081}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0070586, y: 0.0070586, z: 0.0070586}
   m_Children:
   - {fileID: 781160224621813139}
   m_Father: {fileID: 4371911910639384}
@@ -10092,7 +10092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.051, y: 1.42}
+  m_AnchoredPosition: {x: -0.026, y: 1.412}
   m_SizeDelta: {x: 160.926, y: 33.2933}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2161195460779784377
