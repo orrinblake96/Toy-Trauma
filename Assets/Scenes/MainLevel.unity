@@ -1749,6 +1749,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 338522807}
     m_Modifications:
+    - target: {fileID: 372665687, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372665687, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 372665687, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 765018201, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 765018201, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718943981, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718943981, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126191316, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126191316, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126191316, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 932189518629690098, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5245674151503956973, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b,
         type: 3}
       propertyPath: m_Color.a
@@ -1818,6 +1863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245674153117962252, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b, type: 3}
@@ -6559,6 +6609,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

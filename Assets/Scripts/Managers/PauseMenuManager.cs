@@ -22,12 +22,14 @@ namespace Managers
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("TV");
                 Pause();
             }
         }
 
         public void Resume()
         {
+            FindObjectOfType<AudioManager>().Play("TV");
             playerShooting.SetActive(true);
             Time.timeScale = 1.0f;
             pauseMenuUi.SetActive(false);
@@ -44,6 +46,7 @@ namespace Managers
 
         public void LoadMenu()
         {
+            FindObjectOfType<AudioManager>().Play("TV");
             SceneManager.LoadScene("StartMenu");
             Time.timeScale = 1.0f;
             playerShooting.SetActive(true);
@@ -51,6 +54,7 @@ namespace Managers
 
         public void QuitGame()
         {
+            FindObjectOfType<AudioManager>().Play("TV");
             SceneManager.LoadScene("StartMenu");
             Time.timeScale = 1.0f;
             playerShooting.SetActive(true);
