@@ -1,11 +1,15 @@
 ﻿using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using System;
+using Managers;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+
+    private string _currentSceneName;
     
     // Start is called before the first frame update
     private void Awake()
@@ -32,9 +36,33 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (_currentSceneName != SceneManager.GetActiveScene().name)
+        {
+            _currentSceneName = SceneManager.GetActiveScene().name;
+            if (_currentSceneName == "MainLevel")
+            {
+                Play("Theme");
+            }
+            else
+            {
+                Stop("Theme");
+            }
+        }
+    }
+
     private void Start()
     {
-        Play("Theme");
+        _currentSceneName = SceneManager.GetActiveScene().name;
+        if (_currentSceneName == "MainLevel")
+        {
+            Play("Theme");
+        }
+        else
+        {
+            Stop("Theme");
+        }
     }
 
     public void Play (string name)
@@ -46,5 +74,16 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+    
+    public void Stop (string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not found!" );
+            return;
+        }
+        s.source.Stop();
     }
 }

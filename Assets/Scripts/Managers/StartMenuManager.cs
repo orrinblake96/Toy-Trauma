@@ -10,7 +10,7 @@ namespace Managers
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        public void QuitGame()
+        public void Credits()
         {
             Debug.Log("Credits Rolling");
         }
