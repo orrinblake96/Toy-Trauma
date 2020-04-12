@@ -1,18 +1,38 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Managers
 {
     public class StartMenuManager : MonoBehaviour
     {
+        public Animator transition;
+        
+        private static readonly int playGame = Animator.StringToHash("PlayGame");
+
         public void PlayGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LoadLevel();
+        }
+
+        public void PlayClickSound()
+        {
+            FindObjectOfType<AudioManager>().Play("TV");
         }
 
         public void Credits()
         {
             Debug.Log("Credits Rolling");
+        }
+
+        private void LoadLevel()
+        {
+            
+            //Anim
+            transition.SetTrigger(playGame);
+
+            //load
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

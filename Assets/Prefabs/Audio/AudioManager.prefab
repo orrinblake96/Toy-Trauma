@@ -57,8 +57,20 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Theme
-    clip: {fileID: 8300000, guid: 4fff99673a41e24439d527ad0bd6b569, type: 3}
-    volume: 0.1
-    pitch: 0.6
+    clip: {fileID: 8300000, guid: 99ea4dd429c2a4c2c87159a368021b52, type: 3}
+    volume: 0.2
+    pitch: 0.71
     loop: 1
+    source: {fileID: 0}
+  - name: TV
+    clip: {fileID: 8300000, guid: e34f0ff12ab72494f8cc51d158c81199, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StartMenuBG
+    clip: {fileID: 8300000, guid: 58b3092522b904ce88da5922cba9cbc7, type: 3}
+    volume: 0.3
+    pitch: 0.76
+    loop: 0
     source: {fileID: 0}

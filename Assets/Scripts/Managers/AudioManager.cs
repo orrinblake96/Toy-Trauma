@@ -49,20 +49,30 @@ public class AudioManager : MonoBehaviour
             {
                 Stop("Theme");
             }
+            
+            if (_currentSceneName == "StartMenu")
+            {
+                Play("StartMenuBG");
+            }
+            else
+            {
+                Stop("StartMenuBG");
+            }
+            
         }
     }
 
     private void Start()
     {
-        _currentSceneName = SceneManager.GetActiveScene().name;
-        if (_currentSceneName == "MainLevel")
-        {
-            Play("Theme");
-        }
-        else
-        {
-            Stop("Theme");
-        }
+//        _currentSceneName = SceneManager.GetActiveScene().name;
+//        if (_currentSceneName == "MainLevel")
+//        {
+//            Play("Theme");
+//        }
+//        else
+//        {
+//            Stop("Theme");
+//        }
     }
 
     public void Play (string name)
