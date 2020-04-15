@@ -484,7 +484,8 @@ AudioSource:
   m_GameObject: {fileID: 7475860276902582747}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 02e6208ec76314158a9f548f51fe9f11, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
@@ -636,9 +637,9 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 10
   deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
-  healthPowerUpPrefab: {fileID: 1967682603332763828, guid: d0d04f9833e1540c48c8340230b8e955,
+  healthPowerUpPrefab: {fileID: 8849979182573667002, guid: cc3724153c3734b1f849445fdf18cc91,
     type: 3}
-  speedPowerUpPrefab: {fileID: 1967682603332763828, guid: 29beff56cc041424caa8698b3c5657f6,
+  speedPowerUpPrefab: {fileID: 3963419447579401833, guid: 8fd5c85ae05904905942f90f0253d6bf,
     type: 3}
   grenadePowerup: {fileID: 7129480796546517595, guid: b3f88afb68ca941ee9d0a8a00388b289,
     type: 3}

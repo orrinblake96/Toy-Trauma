@@ -8,19 +8,14 @@ namespace Managers
     public class PowerUpManager : MonoBehaviour
     {
         public GameObject pickupEffect;
-        public AudioSource pickupSoundEffect;
         
         private GameObject _player;
         private PlayerHealth _playerHealth;
-        private MeshRenderer _meshRenderer;
-        private SphereCollider _sphereCollider;
 
         private void Awake()
         {
             _player = GameObject.FindGameObjectWithTag("Player");
             _playerHealth = _player.GetComponent<PlayerHealth>();
-            _sphereCollider = GetComponent<SphereCollider>();
-            _meshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void OnTriggerEnter(Collider other)

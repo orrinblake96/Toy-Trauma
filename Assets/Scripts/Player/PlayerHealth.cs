@@ -29,7 +29,7 @@ namespace Player
             _playerMovement = GetComponent<PlayerMovement>();
             _playerShooting = GetComponentInChildren<PlayerShooting>();
             currentHealth = startingHealth;
-            playerHealthBar.SetMaxHealth(startingHealth);
+            playerHealthBar.SetMaxHealth(currentHealth);
         }
 
         private void Update()

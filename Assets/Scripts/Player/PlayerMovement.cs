@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Player
@@ -6,6 +6,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         public float speed = 6.0f;
+        public GameObject speedPickupEffect;
 
         private Vector3 _movement;
         private Animator _anim;
@@ -24,7 +25,7 @@ namespace Player
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
-            
+
             Move(h, v);
             Turning();
             Animating(h, v);
@@ -34,7 +35,7 @@ namespace Player
         {
             _movement.Set(h, 0.0f, v);
             _movement = Time.deltaTime * speed * _movement.normalized;
-            
+
             _playerRigidbody.MovePosition(transform.position + _movement);
         }
 
@@ -58,6 +59,29 @@ namespace Player
             bool _walking = h != 0f || v != 0f;
 
             _anim.SetBool("IsWalking", _walking);
+        }
+
+        public void StartSpeedPowerupTimer(GameObject powerupBox)
+        {
+            //Effects
+            Instantiate(speedPickupEffect, transform.position, transform.rotation);
+            StartCoroutine(SpeedPowerup(powerupBox));
+        }
+
+        private IEnumerator SpeedPowerup(GameObject powerupBox)
+        {
+
+            FindObjectOfType<AudioManager>().Play("Powerup");
+
+            //Player Ability
+            speed += 10.0f;
+            
+            //Destroy Powerup
+            Destroy(powerupBox);
+
+            //Wait for set time, then return to normal
+            yield return new WaitForSeconds(10);
+            speed -= 10.0f;
         }
     }
 }

@@ -43,8 +43,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.6320754, g: 0.0029814949, b: 0.04845806, a: 1}
-  m_Intensity: 2.5
-  m_Range: 20
+  m_Intensity: 1.5
+  m_Range: 18
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -121,9 +121,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4741491630645864720}
-  m_LocalRotation: {x: 0.0000000481159, y: -0, z: -0.0000000037596717, w: 1}
-  m_LocalPosition: {x: 0.40252614, y: 0.30680856, z: 0.74257517}
-  m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1}
+  m_LocalRotation: {x: 0.000680983, y: -0, z: -0, w: 0.99999976}
+  m_LocalPosition: {x: 0.28490835, y: 0.29675734, z: 0.71900976}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
   m_Children:
   - {fileID: 8372865658759270974}
   m_Father: {fileID: 4741491630646097254}
@@ -697,7 +697,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 25
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -4042,7 +4042,7 @@ ParticleSystem:
     maxLights: 20
   TrailModule:
     enabled: 0
-    mode: 0
+    mode: 1
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -4113,7 +4113,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4229,7 +4229,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0, b: 0.82608795, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4916,8 +4916,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.9345597, g: 0.9528302, b: 0.013483422, a: 1}
+      key1: {r: 1, g: 0, b: 0.0812664, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4965,7 +4965,7 @@ ParticleSystemRenderer:
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
@@ -5025,16 +5025,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24af060dd6f1d4c7ca188fec20c97642, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.105
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 3.06
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -5188,8 +5188,9 @@ MonoBehaviour:
   timeBetweenBullets: 0.15
   timeBetweenGrenades: 1
   range: 100
-  grenadePrefab: {fileID: 0}
-  throwForce: 40
+  grenadePrefab: {fileID: 7170459667532187498, guid: 760539e7d28c84321a68ab68447405da,
+    type: 3}
+  throwForce: 400
   grenadeAmount: 0
   grenade1: {fileID: 0}
   grenade2: {fileID: 0}
@@ -5218,8 +5219,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4741491630645864724}
-  m_LocalRotation: {x: 0.44829786, y: 0.44829786, z: -0.5468355, w: 0.5468355}
-  m_LocalPosition: {x: 0.40252617, y: 0.26910257, z: -0.1804804}
+  m_LocalRotation: {x: 0.44867012, y: 0.44867012, z: -0.54653007, w: 0.54653007}
+  m_LocalPosition: {x: 0.28490838, y: 0.26030847, z: -0.2040963}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4741491630646097254}
@@ -5456,7 +5457,8 @@ AudioSource:
   m_GameObject: {fileID: 4741491630645864792}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9922a12f34d0a084aab32de985459723, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5556,6 +5558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  speedPickupEffect: {fileID: 0}
 --- !u!114 &4741491631320325144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5618,7 +5621,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9595677, g: 0.9811321, b: 0, a: 1}
-  m_Intensity: 7
+  m_Intensity: 6
   m_Range: 15
   m_SpotAngle: 48
   m_InnerSpotAngle: 21.80208
@@ -5627,7 +5630,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.705
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
