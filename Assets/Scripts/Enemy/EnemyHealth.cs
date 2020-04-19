@@ -101,7 +101,7 @@ namespace Enemy
             GetComponent<Rigidbody>().isKinematic = true;
             _isSinking = true;
             ScoreManager.score += scoreValue;
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 3f);
         }
     }
 }

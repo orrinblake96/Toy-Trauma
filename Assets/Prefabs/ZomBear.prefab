@@ -169,7 +169,7 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  deathClip: {fileID: 8300000, guid: 5dbfc4c29bde44178ad1d1c56d743c58, type: 3}
   healthPowerUpPrefab: {fileID: 8849979182573667002, guid: cc3724153c3734b1f849445fdf18cc91,
     type: 3}
   speedPowerUpPrefab: {fileID: 3963419447579401833, guid: 8fd5c85ae05904905942f90f0253d6bf,
@@ -188,7 +188,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9f222a70a2f24786b591e958a4e4310, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
