@@ -47,7 +47,7 @@ namespace Player
 
             if (_timer >= timeBetweenBullets * _effectsDisplayTime) DisableEffects();
 
-            if (Input.GetKey(KeyCode.Space) && _grenadeTimer >= timeBetweenGrenades && grenadeAmount > 0) ThrowGrenade();
+            if (Input.GetKey(KeyCode.E) && _grenadeTimer >= timeBetweenGrenades && grenadeAmount > 0) ThrowGrenade();
             
             switch (grenadeAmount)
             {
