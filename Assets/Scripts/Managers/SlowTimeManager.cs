@@ -9,6 +9,7 @@ namespace Managers
     {
         public float slowdownFactor = 0.05f;
         public float slowdownLength = 4f;
+        public bool slowtime = false;
         
         private AudioSource[] _sources;
         private PlayerKillstreak _currentStreak;
@@ -22,8 +23,9 @@ namespace Managers
         private void Update()
         {
 
-            if (Input.GetKeyDown(KeyCode.Q) && _currentStreak.currentKillStreak % 20 == 0)
+            if (Input.GetKeyDown(KeyCode.Q) && slowtime)
             {
+                slowtime = false;
                 SlowMotion();
             }
 
