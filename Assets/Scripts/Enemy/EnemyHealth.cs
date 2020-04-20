@@ -30,6 +30,7 @@ namespace Enemy
         private GameObject _player;
         private PlayerHealth _playerHealth;
         private PlayerMovement _playerMovement;
+        private PlayerKillstreak _killstreak;
 
         private void Awake()
         {
@@ -41,6 +42,7 @@ namespace Enemy
             _playerHealth = _player.GetComponent<PlayerHealth>();
             _playerMovement = _player.GetComponent<PlayerMovement>();
             _enemyHealthBar = healthBar.GetComponent<EnemyHealthBar>();
+            _killstreak = GameObject.Find("KillstreakCounter").GetComponent<PlayerKillstreak>();
             
             
             _enemyHealthBar.SetMaxHealth(startingHealth);
@@ -70,6 +72,8 @@ namespace Enemy
          private void Death()
         {
             _isDead = true;
+
+            _killstreak.KillstreakCounter();
  
             _capsuleCollider.isTrigger = true;
 
