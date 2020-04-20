@@ -6,7 +6,7 @@ namespace Player
 {
     public class PlayerKillstreak : MonoBehaviour
     {
-        public int currentKillStreak = 0;
+        public int currentKillStreak = 1;
         private PlayerShooting _playerShooting;
 
         private void Start()

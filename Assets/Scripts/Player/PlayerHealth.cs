@@ -46,7 +46,8 @@ namespace Player
             currentHealth -= amount;
             playerHealthBar.SetHealth(currentHealth);
             
-            _playerAudio.Play();
+//            _playerAudio.Play();
+            FindObjectOfType<AudioManager>().Play("PlayerHurt");
 
             if (currentHealth <= 0 && !_isDead) Death();
         }
@@ -66,8 +67,9 @@ namespace Player
 
             _anim.SetTrigger(Die);
 
-            _playerAudio.clip = deathClip;
-            _playerAudio.Play();
+//            _playerAudio.clip = deathClip;
+//            _playerAudio.Play();
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
             _playerMovement.enabled = false;
         }

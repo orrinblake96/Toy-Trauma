@@ -101,8 +101,9 @@ namespace Player
         {
             _timer = 0f;
             
-            _gunAudio.Play();
-
+//            _gunAudio.Play();
+            FindObjectOfType<AudioManager>().Play("PlayerShoot");
+            
             _gunLight.enabled = true;
             
             _gunParticles.Stop();
