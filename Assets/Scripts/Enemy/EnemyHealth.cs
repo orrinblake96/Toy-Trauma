@@ -57,8 +57,20 @@ namespace Enemy
         public void TakeDamage(int amount, Vector3 hitPoint)
         {
             if (_isDead) return;
+
+            switch (gameObject.name)
+            {
+                case "Zombunny(Clone)":
+                    FindObjectOfType<AudioManager>().Play("zombunnyHurt");
+                    break;
+                case "ZomBear(Clone)":
+                    FindObjectOfType<AudioManager>().Play("zombearHurt");
+                    break;
+                case "Hellephant(Clone)":
+                    FindObjectOfType<AudioManager>().Play("hellephantHurt");
+                    break;
+            }
             
-            _enemyAudio.Play();
 
             currentHealth -= amount;
             _enemyHealthBar.SetHealth(currentHealth);
@@ -78,23 +90,23 @@ namespace Enemy
             _capsuleCollider.isTrigger = true;
 
             _anim.SetTrigger(Dead);
-
-            _enemyAudio.clip = deathClip;
-            _enemyAudio.Play();
             
             //power-up drop chance
-            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 5) && (_playerHealth.currentHealth < 40) )
+            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 6) && (_playerHealth.currentHealth < 40) )
             {
+                FindObjectOfType<AudioManager>().Play("zombunnyDeath");
                 Instantiate(healthPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             } 
             
-            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 5) && (_playerMovement.speed <= 6))
+            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 7) && (_playerMovement.speed <= 6))
             {
+                FindObjectOfType<AudioManager>().Play("zombearDeath");
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             }
             
-            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 5))
+            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 6))
             {
+                FindObjectOfType<AudioManager>().Play("hellephantDeath");
                 Instantiate(grenadePowerup, transform.position + Vector3.up, transform.rotation);
             }
         }
