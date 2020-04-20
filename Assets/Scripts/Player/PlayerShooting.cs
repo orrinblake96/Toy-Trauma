@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Enemy;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ namespace Player
         public GameObject grenade2;
         public GameObject grenade3;
         public GameObject forceField;
+        public bool setForceField = false;
 
         private float _timer;
         private float _grenadeTimer;
@@ -37,6 +39,7 @@ namespace Player
             _gunLine = GetComponent<LineRenderer>();
             _gunAudio = GetComponent<AudioSource>();
             _gunLight = GetComponent<Light>();
+            
         }
 
         private void Update()
@@ -44,14 +47,16 @@ namespace Player
             _timer += Time.deltaTime;
             _grenadeTimer += Time.deltaTime;
 
-            if (Input.GetKeyDown(KeyCode.LeftShift) && !forceField.activeSelf)
-            {
-                forceField.SetActive(true);
-            }
-            else if(Input.GetKeyDown(KeyCode.LeftShift) && forceField.activeSelf)
-            {
-                forceField.SetActive(false);
-            }
+//            if (Input.GetKeyDown(KeyCode.LeftShift) && !forceField.activeSelf)
+//            {
+//                forceField.SetActive(true);
+//            }
+//            else if(Input.GetKeyDown(KeyCode.LeftShift) && forceField.activeSelf)
+//            {
+//                forceField.SetActive(false);
+//            }
+
+            if (setForceField) StartCoroutine(TurnOnFrocefield());
 
             if (Input.GetButton("Fire1") && _timer >= timeBetweenBullets) Shoot();
 
@@ -82,6 +87,14 @@ namespace Player
                     grenade3.SetActive(false);
                     break;
             }
+        }
+
+        private IEnumerator TurnOnFrocefield()
+        {
+            setForceField = false;
+            forceField.SetActive(true);
+            yield return new WaitForSeconds(10f);
+            forceField.SetActive(false);
         }
 
         private void Shoot()
