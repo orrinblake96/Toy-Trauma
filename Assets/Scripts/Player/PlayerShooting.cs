@@ -17,6 +17,7 @@ namespace Player
         public GameObject grenade1;
         public GameObject grenade2;
         public GameObject grenade3;
+        public GameObject forceField;
 
         private float _timer;
         private float _grenadeTimer;
@@ -42,6 +43,15 @@ namespace Player
         {
             _timer += Time.deltaTime;
             _grenadeTimer += Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !forceField.activeSelf)
+            {
+                forceField.SetActive(true);
+            }
+            else if(Input.GetKeyDown(KeyCode.LeftShift) && forceField.activeSelf)
+            {
+                forceField.SetActive(false);
+            }
 
             if (Input.GetButton("Fire1") && _timer >= timeBetweenBullets) Shoot();
 
