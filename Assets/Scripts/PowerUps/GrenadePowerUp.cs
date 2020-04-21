@@ -1,5 +1,6 @@
 ﻿using Enemy;
 using UnityEngine;
+using EZCameraShake;
 
 namespace PowerUps
 {
@@ -11,6 +12,7 @@ namespace PowerUps
         public float blastForce = 700;
         private float _countdown;
         private bool _hasExploded;
+        private CameraFollow _camera;
         // Start is called before the first frame update
         void Start()
         {
@@ -49,7 +51,8 @@ namespace PowerUps
                     enemyHealth.TakeDamage(40, nearbyObject.transform.position);
                 }
             }
-            
+
+            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
             FindObjectOfType<AudioManager>().Play("Grenade");
             
             Destroy(gameObject);

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using EZCameraShake;
 
 namespace Player
 {
@@ -47,6 +48,7 @@ namespace Player
             playerHealthBar.SetHealth(currentHealth);
             
 //            _playerAudio.Play();
+            CameraShaker.Instance.ShakeOnce(1f, 3f, .1f, .4f);
             FindObjectOfType<AudioManager>().Play("PlayerHurt");
 
             if (currentHealth <= 0 && !_isDead) Death();
