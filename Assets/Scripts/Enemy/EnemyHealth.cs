@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Player;
+﻿using Player;
 using Managers;
 using UnityEngine;
 using UnityEngine.AI;
