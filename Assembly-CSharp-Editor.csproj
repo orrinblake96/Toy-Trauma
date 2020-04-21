@@ -59,8 +59,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Shared\Ramps\Editor\RampAssetEditor.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-     <Compile Include="Assets\TutorialInfo\Scripts\Editor\TutorialInfoEditor.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>/Users/orrinblake/unityGames/Toy-Trauma/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
