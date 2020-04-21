@@ -4874,7 +4874,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20c2c861010d0ce49a4716087f02535e, type: 2}
+  - {fileID: 2100000, guid: d47778dcceaab4ed3ade6408dbd58006, type: 2}
   - {fileID: 2100000, guid: bd569b9b15f984154be71ac0ee5a0fc9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -10039,7 +10039,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.891, b: 0, a: 1}
   m_Intensity: 0.75
-  m_Range: 5.82
+  m_Range: 2.87
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10

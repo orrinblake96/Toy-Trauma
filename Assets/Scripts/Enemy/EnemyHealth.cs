@@ -92,19 +92,19 @@ namespace Enemy
             _anim.SetTrigger(Dead);
             
             //power-up drop chance
-            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 5) && (_playerHealth.currentHealth < 40) )
+            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 7) && (_playerHealth.currentHealth < 40) )
             {
                 FindObjectOfType<AudioManager>().Play("zombunnyDeath");
                 Instantiate(healthPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             } 
             
-            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 5) && (_playerMovement.speed <= 6))
+            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 7) && (_playerMovement.speed <= 6))
             {
                 FindObjectOfType<AudioManager>().Play("zombearDeath");
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             }
             
-            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 5))
+            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 7))
             {
                 FindObjectOfType<AudioManager>().Play("hellephantDeath");
                 Instantiate(grenadePowerup, transform.position + Vector3.up, transform.rotation);

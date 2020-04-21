@@ -47,15 +47,6 @@ namespace Player
             _timer += Time.deltaTime;
             _grenadeTimer += Time.deltaTime;
 
-//            if (Input.GetKeyDown(KeyCode.LeftShift) && !forceField.activeSelf)
-//            {
-//                forceField.SetActive(true);
-//            }
-//            else if(Input.GetKeyDown(KeyCode.LeftShift) && forceField.activeSelf)
-//            {
-//                forceField.SetActive(false);
-//            }
-
             if (setForceField) StartCoroutine(TurnOnFrocefield());
 
             if (Input.GetButton("Fire1") && _timer >= timeBetweenBullets) Shoot();
