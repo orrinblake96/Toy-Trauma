@@ -18,7 +18,7 @@ namespace Managers
 
         private void Update()
         {
-            _text.text = "Score: " + score;
+            _text.text = score.ToString();
         }
     }
 }
