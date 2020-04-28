@@ -4289,7 +4289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1108119517}
   enemy: {fileID: 7475860276902582747, guid: c8532353e2d3d4601b791c6250ab6cbd, type: 3}
-  spawnTime: 3
+  spawnTime: 4
   spawnPoints:
   - {fileID: 1552079711}
 --- !u!4 &1471852301
@@ -4320,7 +4320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1108119517}
   enemy: {fileID: 1819768538276330, guid: ebed7a3ef4be5458fb88a3c3a689c566, type: 3}
-  spawnTime: 9
+  spawnTime: 12
   spawnPoints:
   - {fileID: 1184219903}
 --- !u!114 &1471852303
@@ -4337,7 +4337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1108119517}
   enemy: {fileID: 1161934229116340, guid: 78e1368557eab4d62a5487e98c1b5c5f, type: 3}
-  spawnTime: 6
+  spawnTime: 8
   spawnPoints:
   - {fileID: 1391252511}
 --- !u!1 &1474178314
@@ -4373,7 +4373,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -12.62, y: -9.1}
   m_SizeDelta: {x: -7.02, y: -14.1}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6591,7 +6591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2028644472
 RectTransform:
   m_ObjectHideFlags: 0
