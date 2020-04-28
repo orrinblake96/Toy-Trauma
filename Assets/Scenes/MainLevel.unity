@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4339623, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1684,7 +1684,7 @@ PrefabInstance:
     - target: {fileID: 5245674152190235225, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5245674152190235226, guid: c65dcc5e2e0ba4de1ab124ecfe4b064b,
         type: 3}
@@ -2970,7 +2970,7 @@ PrefabInstance:
     - target: {fileID: 2321136, guid: 149d6dcc67e8d1240bbc0dd6ddf0c1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e216d9a237468f4458c2662e19f60c81, type: 2}
+      objectReference: {fileID: 2100000, guid: ce4b77858ec6c0f469b07b034c21a85f, type: 2}
     - target: {fileID: 6583008, guid: 149d6dcc67e8d1240bbc0dd6ddf0c1bd, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -4390,7 +4390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1433471, g: 0.9137255, b: 0.054901958, a: 1}
+  m_Color: {r: 0.058456015, g: 0.5566038, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4600,6 +4600,7 @@ MonoBehaviour:
   slowdownFactor: 0.2
   slowdownLength: 2
   slowtime: 0
+  gameRunning: 1
 --- !u!1 &1569585677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5782,6 +5783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 289dace5b34d8447abcd7554859638a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePaused: 0
   pauseMenuUi: {fileID: 1899004562}
   playerShooting: {fileID: 1373802112}
 --- !u!1001 &1826448857
@@ -5853,7 +5855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_Intensity
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -13574,7 +13576,7 @@ PrefabInstance:
     - target: {fileID: 7803100473223924639, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
         type: 3}
       propertyPath: m_Intensity
-      value: 12.68
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7803100473223924639, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
         type: 3}
@@ -13585,6 +13587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpotAngle
       value: 22.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089280368836360909, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
+        type: 3}
+      propertyPath: m_Name
+      value: GunLight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3e72cd89ef44f97afe08f9baaabc18, type: 3}

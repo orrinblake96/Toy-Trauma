@@ -9,6 +9,7 @@ namespace Managers
     public class PauseMenuManager : MonoBehaviour
     {
         public static bool gameIsPaused = false;
+        public bool gamePaused = false;
 
         public GameObject pauseMenuUi;
         public GameObject playerShooting;
@@ -33,7 +34,8 @@ namespace Managers
             playerShooting.SetActive(true);
             Time.timeScale = 1.0f;
             pauseMenuUi.SetActive(false);
-            gameIsPaused = false; 
+            gameIsPaused = false;
+            gamePaused = false;
         }
 
         private void Pause()
@@ -42,6 +44,7 @@ namespace Managers
             Time.timeScale = 0.0f;
             pauseMenuUi.SetActive(true);
             gameIsPaused = true;
+            gamePaused = true;
         }
 
         public void LoadMenu()

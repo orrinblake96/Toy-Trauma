@@ -10,14 +10,17 @@ namespace Managers
         public float slowdownFactor = 0.05f;
         public float slowdownLength = 4f;
         public bool slowtime = false;
+        public bool gameRunning = true;
         
         private AudioSource[] _sources;
         private PlayerKillstreak _currentStreak;
+        private PauseMenuManager _pauseMenuManager;
 
         private void Start()
         {
             _sources = GetComponents<AudioSource>();
             _currentStreak = GameObject.Find("KillstreakCounter").GetComponent<PlayerKillstreak>();
+            _pauseMenuManager = GameObject.Find("PauseCanvas").GetComponent<PauseMenuManager>();
         }
 
         private void Update()
@@ -29,16 +32,20 @@ namespace Managers
                 SlowMotion();
             }
 
-            Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
-            Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
-            
-            foreach (AudioSource clip in _sources)
+            if (!_pauseMenuManager.gamePaused)
             {
-                var pitch = clip.pitch;
-                pitch += (1f/ slowdownLength) * Time.unscaledDeltaTime;
-                clip.pitch = pitch;
-                clip.pitch = Mathf.Clamp(pitch, 0f, 1f);
+                Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
+                Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
+            
+                foreach (AudioSource clip in _sources)
+                {
+                    var pitch = clip.pitch;
+                    pitch += (1f/ slowdownLength) * Time.unscaledDeltaTime;
+                    clip.pitch = pitch;
+                    clip.pitch = Mathf.Clamp(pitch, 0f, 1f);
+                } 
             }
+            
         }
 
         void SlowMotion()
