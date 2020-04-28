@@ -2,6 +2,7 @@
 using Player;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -15,24 +16,27 @@ namespace Managers
         private AudioSource[] _sources;
         private PlayerKillstreak _currentStreak;
         private PauseMenuManager _pauseMenuManager;
+        private GameObject _hourglassUi;
 
         private void Start()
         {
             _sources = GetComponents<AudioSource>();
             _currentStreak = GameObject.Find("KillstreakCounter").GetComponent<PlayerKillstreak>();
             _pauseMenuManager = GameObject.Find("PauseCanvas").GetComponent<PauseMenuManager>();
+            _hourglassUi = GameObject.Find("UI/PowerUpsCanvas/Hourglass");
         }
 
         private void Update()
         {
 
-            if (Input.GetKeyDown(KeyCode.Q) && slowtime)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && slowtime)
             {
                 slowtime = false;
                 SlowMotion();
+                _hourglassUi.SetActive(false);
             }
 
-            if (!_pauseMenuManager.gamePaused)
+            if (!_pauseMenuManager.gamePaused && Time.timeScale != 1f)
             {
                 Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
                 Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
@@ -46,6 +50,11 @@ namespace Managers
                 } 
             }
             
+        }
+
+        public void ShowHourglassUi()
+        {
+            _hourglassUi.SetActive(true);
         }
 
         void SlowMotion()

@@ -20,8 +20,12 @@ namespace Player
         public void KillstreakCounter()
         {
             currentKillStreak += 1;
-            if (currentKillStreak % 15 == 0 && !_playerShooting.setForceField) _playerShooting.setForceField = true;
-            if (currentKillStreak % 20 == 0 && !_slowTimeManager.slowtime) _slowTimeManager.slowtime = true;
+            if (currentKillStreak % 25 == 0 && !_playerShooting.setForceField) _playerShooting.setForceField = true;
+            if (currentKillStreak % 30 == 0 && !_slowTimeManager.slowtime)
+            {
+                _slowTimeManager.slowtime = true;
+                _slowTimeManager.ShowHourglassUi();
+            }
             Debug.Log("Kill" + currentKillStreak);
         }
 
