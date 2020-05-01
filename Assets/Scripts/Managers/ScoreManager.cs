@@ -20,12 +20,12 @@ namespace Managers
         {
             _text.text = score.ToString();
 
-            if (score >= 500 && score <= 1500)
+            if (score >= 1000 && score <= 2000)
             {
-                _text.color = Color.Lerp(Color.white, Color.yellow, 2f);
-            } else if (score > 1500)
+                _text.color = Color.Lerp(Color.white, Color.yellow, 5f);
+            } else if (score > 2000)
             {
-                _text.color = Color.Lerp(Color.yellow, Color.green, 2f);
+                _text.color = Color.Lerp(Color.yellow, Color.green, 5f);
             }
         }
     }

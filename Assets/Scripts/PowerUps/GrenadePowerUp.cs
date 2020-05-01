@@ -1,4 +1,5 @@
-﻿using Enemy;
+﻿using System;
+using Enemy;
 using UnityEngine;
 using EZCameraShake;
 
@@ -13,10 +14,14 @@ namespace PowerUps
         private float _countdown;
         private bool _hasExploded;
         private CameraFollow _camera;
+        private GameObject _forcefield;
+
         // Start is called before the first frame update
         void Start()
         {
             _countdown = delay;
+            _forcefield = GameObject.Find("HexgonSphere/HexgonSphereInner");
+            Physics.IgnoreCollision(_forcefield.GetComponent<Collider>(), GetComponent<Collider>());
         }
 
         // Update is called once per frame

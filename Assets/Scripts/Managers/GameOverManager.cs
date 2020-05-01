@@ -23,8 +23,10 @@ namespace Managers
             if (playerHealth.currentHealth <= 0)
             {
                 _anim.SetTrigger("GameOver");
-                _restartTimer += Time.deltaTime;
-                if (_restartTimer >= restartDelay) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
         }
     }
