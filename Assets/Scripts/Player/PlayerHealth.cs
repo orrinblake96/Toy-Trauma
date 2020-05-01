@@ -97,6 +97,7 @@ namespace Player
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
             _playerMovement.enabled = false;
+            _playerShooting.enabled = false;
         }
     }
 }

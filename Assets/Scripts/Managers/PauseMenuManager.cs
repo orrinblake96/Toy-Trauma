@@ -13,10 +13,11 @@ namespace Managers
 
         public GameObject pauseMenuUi;
         public GameObject playerShooting;
+        public GameObject player;
 
         private void Update()
         {
-            if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (!Input.GetKeyDown(KeyCode.Escape) || player.GetComponent<PlayerHealth>().currentHealth <= 0) return;
             if (gameIsPaused)
             {
                 Resume();
