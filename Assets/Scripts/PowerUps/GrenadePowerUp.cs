@@ -21,7 +21,10 @@ namespace PowerUps
         {
             _countdown = delay;
             _forcefield = GameObject.Find("HexgonSphere/HexgonSphereInner");
-            Physics.IgnoreCollision(_forcefield.GetComponent<Collider>(), GetComponent<Collider>());
+            if (_forcefield.activeSelf)
+            {
+                Physics.IgnoreCollision(_forcefield.GetComponent<Collider>(), GetComponent<Collider>());   
+            }
         }
 
         // Update is called once per frame

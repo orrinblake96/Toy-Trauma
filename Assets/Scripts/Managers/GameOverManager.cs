@@ -12,6 +12,7 @@ namespace Managers
 
         private Animator _anim;
         private float _restartTimer;
+        private static readonly int GameOver = Animator.StringToHash("GameOver");
 
         private void Awake()
         {
@@ -22,7 +23,7 @@ namespace Managers
         {
             if (playerHealth.currentHealth <= 0)
             {
-                _anim.SetTrigger("GameOver");
+                _anim.SetTrigger(GameOver);
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

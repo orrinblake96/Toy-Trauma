@@ -17,6 +17,7 @@ namespace Player
         public Color flashColor = new Color(1f, 0f, 0f, 0.1f);
 
         private Animator _anim;
+        private Animator _gameOverAnim;
         private AudioSource _playerAudio;
         private PlayerMovement _playerMovement;
         private PlayerShooting _playerShooting;
@@ -25,10 +26,12 @@ namespace Player
         private static readonly int Die = Animator.StringToHash("Die");
         private ParticleSystem _hitParticles;
         private Light _gunLight;
+        private static readonly int HealthLow = Animator.StringToHash("HealthLow");
 
         private void Awake()
         {
             _anim = GetComponent<Animator>();
+            _gameOverAnim = GameObject.Find("UI/HUDCanvas").GetComponent<Animator>();
             _playerAudio = GetComponent<AudioSource>();
             _playerMovement = GetComponent<PlayerMovement>();
             _playerShooting = GetComponentInChildren<PlayerShooting>();
@@ -43,6 +46,14 @@ namespace Player
 
         private void Update()
         {
+            if (currentHealth < 40 && currentHealth >= 1)
+            {
+                _gameOverAnim.SetBool(HealthLow, true);
+            }
+            else
+            {
+                _gameOverAnim.SetBool(HealthLow, false);
+            }
             
             damageImage.color = _damaged ? flashColor : Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
 
