@@ -30,6 +30,7 @@ namespace Enemy
         private PlayerHealth _playerHealth;
         private PlayerMovement _playerMovement;
         private PlayerKillstreak _killstreak;
+        private ScoreManager _scoreManager;
 
         private void Awake()
         {
@@ -42,6 +43,7 @@ namespace Enemy
             _playerMovement = _player.GetComponent<PlayerMovement>();
             _enemyHealthBar = healthBar.GetComponent<EnemyHealthBar>();
             _killstreak = GameObject.Find("KillstreakCounter").GetComponent<PlayerKillstreak>();
+            _scoreManager = GameObject.Find("UI/HUDCanvas/ScoreText").GetComponent<ScoreManager>();
             
             
             _enemyHealthBar.SetMaxHealth(startingHealth);
@@ -89,6 +91,8 @@ namespace Enemy
             _capsuleCollider.isTrigger = true;
 
             _anim.SetTrigger(Dead);
+            StartCoroutine(_scoreManager.PlayScoreKillAnim());
+            
             
             //power-up drop chance
             if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 7) && (_playerHealth.currentHealth < 40) )
