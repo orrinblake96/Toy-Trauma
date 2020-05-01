@@ -19,6 +19,14 @@ namespace Managers
         private void Update()
         {
             _text.text = score.ToString();
+
+            if (score >= 500 && score <= 1500)
+            {
+                _text.color = Color.Lerp(Color.white, Color.yellow, 2f);
+            } else if (score > 1500)
+            {
+                _text.color = Color.Lerp(Color.yellow, Color.green, 2f);
+            }
         }
     }
 }
