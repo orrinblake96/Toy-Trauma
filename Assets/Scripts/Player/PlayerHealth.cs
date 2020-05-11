@@ -25,7 +25,6 @@ namespace Player
         private bool _damaged;
         private static readonly int Die = Animator.StringToHash("Die");
         private ParticleSystem _hitParticles;
-        private Light _gunLight;
         private static readonly int HealthLow = Animator.StringToHash("HealthLow");
 
         private void Awake()
@@ -36,9 +35,6 @@ namespace Player
             _playerMovement = GetComponent<PlayerMovement>();
             _playerShooting = GetComponentInChildren<PlayerShooting>();
             _hitParticles = GameObject.Find("PlayerHitParticles").GetComponent<ParticleSystem>();
-            _gunLight = GameObject.Find("GunLight").GetComponent<Light>();
-
-            Debug.Log(_gunLight.intensity);
             
             currentHealth = startingHealth;
             playerHealthBar.SetMaxHealth(currentHealth);
@@ -64,7 +60,6 @@ namespace Player
         {
             _damaged = true;
 
-            _gunLight.intensity -= 1;
             currentHealth -= amount;
             playerHealthBar.SetHealth(currentHealth);
             
@@ -81,7 +76,6 @@ namespace Player
         public void GainHealth()
         {
 
-            _gunLight.intensity += 1;
             currentHealth += 10;
             playerHealthBar.SetHealth(currentHealth);
         }

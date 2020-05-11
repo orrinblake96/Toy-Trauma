@@ -26,7 +26,6 @@ namespace Player
                 _slowTimeManager.slowtime = true;
                 _slowTimeManager.ShowHourglassUi();
             }
-            Debug.Log("Kill" + currentKillStreak);
         }
 
     }

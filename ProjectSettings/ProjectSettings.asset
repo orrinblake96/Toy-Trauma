@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Toy Trauma
-  defaultCursor: {fileID: 2800000, guid: 1b362737dfa014a40a71ecaffce5e053, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 1e886ac204ace4d428ef33bc7e94dd77, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

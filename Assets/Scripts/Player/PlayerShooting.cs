@@ -107,7 +107,7 @@ namespace Player
             _shootRay.origin = transform.position;
             _shootRay.direction = transform.forward;
             
-            CameraShaker.Instance.ShakeOnce(.8f, 1.2f, .1f, 1f);
+            CameraShaker.Instance.ShakeOnce(.5f, .8f, .1f, 1f);
 
             if (Physics.Raycast(_shootRay, out _shootHit, range, _shootableMask))
             {

@@ -12,7 +12,6 @@ namespace Player
         public void SetHealth(int currentHealth)
         {
             playerHealthSlider.value = currentHealth;
-            Debug.Log(currentHealth);
             fill.color = healthBarGradient.Evaluate(playerHealthSlider.normalizedValue);
         }
 
