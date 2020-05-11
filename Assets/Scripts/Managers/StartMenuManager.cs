@@ -20,11 +20,6 @@ namespace Managers
             FindObjectOfType<AudioManager>().Play("TV");
         }
 
-        public void Credits()
-        {
-            Debug.Log("Credits Rolling");
-        }
-
         private void LoadLevel()
         {
             
