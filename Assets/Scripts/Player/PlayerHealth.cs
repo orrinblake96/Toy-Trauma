@@ -64,7 +64,7 @@ namespace Player
             playerHealthBar.SetHealth(currentHealth);
             
 
-            CameraShaker.Instance.ShakeOnce(1f, 3f, .1f, .4f);
+            CameraShaker.Instance.ShakeOnce(1.5f, 4f, .1f, .4f);
             
             _hitParticles.Play();
             

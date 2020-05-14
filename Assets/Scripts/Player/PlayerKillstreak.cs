@@ -7,7 +7,8 @@ namespace Player
 {
     public class PlayerKillstreak : MonoBehaviour
     {
-        public int currentKillStreak = 1;
+        public int currentForcefieldKillStreak = 1;
+        public int currentSlowtimeKillStreak = 1;
         private PlayerShooting _playerShooting;
         private SlowTimeManager _slowTimeManager;
 
@@ -19,12 +20,20 @@ namespace Player
 
         public void KillstreakCounter()
         {
-            currentKillStreak += 1;
-            if (currentKillStreak % 25 == 0 && !_playerShooting.setForceField) _playerShooting.setForceField = true;
-            if (currentKillStreak % 30 == 0 && !_slowTimeManager.slowtime)
+            currentForcefieldKillStreak += 1;
+            currentSlowtimeKillStreak += 1;
+            if (currentForcefieldKillStreak == 26 && !_playerShooting.setForceField)
             {
+                _playerShooting.setForceField = true;
+                currentForcefieldKillStreak = 1;
+            }
+            
+            if (currentSlowtimeKillStreak == 10 && _slowTimeManager.slowtime == false)
+            {
+                Debug.Log("=========================== SLOWED ============================");
                 _slowTimeManager.slowtime = true;
                 _slowTimeManager.ShowHourglassUi();
+                currentSlowtimeKillStreak = 1;
             }
         }
 

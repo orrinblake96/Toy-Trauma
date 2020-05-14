@@ -21,7 +21,7 @@ namespace PowerUps
         {
             _countdown = delay;
             _forcefield = GameObject.Find("HexgonSphere/HexgonSphereInner");
-            if (_forcefield.activeSelf)
+            if (_forcefield != null)
             {
                 Physics.IgnoreCollision(_forcefield.GetComponent<Collider>(), GetComponent<Collider>());   
             }
@@ -60,7 +60,7 @@ namespace PowerUps
                 }
             }
 
-            CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
+            CameraShaker.Instance.ShakeOnce(4f, 3f, .05f, 1f);
             FindObjectOfType<AudioManager>().Play("Grenade");
             
             Destroy(gameObject);

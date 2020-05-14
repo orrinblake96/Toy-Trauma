@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Player;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Managers
 {
