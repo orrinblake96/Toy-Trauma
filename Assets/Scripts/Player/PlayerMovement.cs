@@ -14,6 +14,8 @@ namespace Player
         private int _floorMask;
         private float _camRayLength = 100.0f;
 
+        private GameObject _speedEffect;
+
         private void Awake()
         {
             _floorMask = LayerMask.GetMask("Floor");
@@ -64,7 +66,7 @@ namespace Player
         public void StartSpeedPowerupTimer(GameObject powerupBox)
         {
             //Effects
-            Instantiate(speedPickupEffect, transform.position, transform.rotation);
+            _speedEffect = Instantiate(speedPickupEffect, transform.position, transform.rotation);
             StartCoroutine(SpeedPowerup(powerupBox));
         }
 
@@ -78,7 +80,9 @@ namespace Player
             
             //Destroy Powerup
             Destroy(powerupBox);
-
+            
+            Destroy(_speedEffect, 2f);
+            
             //Wait for set time, then return to normal
             yield return new WaitForSeconds(10);
             speed -= 10.0f;

@@ -45,6 +45,7 @@ namespace Player
 
         private void Update()
         {
+                
             _timer += Time.deltaTime;
             _grenadeTimer += Time.deltaTime;
 
@@ -93,7 +94,6 @@ namespace Player
         {
             _timer = 0f;
             
-//            _gunAudio.Play();
             FindObjectOfType<AudioManager>().Play("PlayerShoot");
             
             _gunLight.enabled = true;

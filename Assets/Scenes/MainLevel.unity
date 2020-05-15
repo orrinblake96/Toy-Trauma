@@ -4471,6 +4471,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4741491631320325142}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1373802119 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 510554002, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
+    type: 3}
+  m_PrefabInstance: {fileID: 4741491631320325142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1374234088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,7 +4853,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471852299}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76a99222b1e4a384e923ac7e86efc709, type: 3}
   m_Name: 
@@ -4879,7 +4885,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471852299}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76a99222b1e4a384e923ac7e86efc709, type: 3}
   m_Name: 
@@ -5219,6 +5225,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4741491631320325142}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1661601955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4741491630645964724, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
+    type: 3}
+  m_PrefabInstance: {fileID: 4741491631320325142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661601954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec45203ae7a1a54c9d02c355f983833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1688757323
 GameObject:
   m_ObjectHideFlags: 0
@@ -6253,7 +6271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_Intensity
-      value: 0.25
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_Shadows.m_Strength
@@ -14036,6 +14054,14 @@ PrefabInstance:
       propertyPath: forceField
       value: 
       objectReference: {fileID: 2023221757}
+    - target: {fileID: 510554004, guid: 9e3e72cd89ef44f97afe08f9baaabc18, type: 3}
+      propertyPath: gunRayPs
+      value: 
+      objectReference: {fileID: 1373802119}
+    - target: {fileID: 510554004, guid: 9e3e72cd89ef44f97afe08f9baaabc18, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1661601955}
     - target: {fileID: 510554006, guid: 9e3e72cd89ef44f97afe08f9baaabc18, type: 3}
       propertyPath: m_Color.r
       value: 0.5523947
@@ -14053,6 +14079,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4741491630645964724, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
+        type: 3}
+      propertyPath: speedPickupEffect
+      value: 
+      objectReference: {fileID: 1000011128802252, guid: 9bab7d8977aeb454eb4391568b4612f5,
+        type: 3}
     - target: {fileID: 4741491630646097254, guid: 9e3e72cd89ef44f97afe08f9baaabc18,
         type: 3}
       propertyPath: m_LocalPosition.x

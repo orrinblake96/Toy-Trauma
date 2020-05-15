@@ -11,6 +11,7 @@ namespace Managers
         
         private GameObject _player;
         private PlayerHealth _playerHealth;
+        private GameObject _healthEffect;
 
         private void Awake()
         {
@@ -32,13 +33,16 @@ namespace Managers
         private void HealthPickup()
         {
             //Effects
-            Instantiate(pickupEffect, transform.position , transform.rotation);
+            _healthEffect = Instantiate(pickupEffect, transform.position , transform.rotation);
             
             //Sound effect
             FindObjectOfType<AudioManager>().Play("Powerup");
             
             //Player Ability
             _playerHealth.GainHealth();
+            
+            //Cleanup particle effects
+            Destroy(_healthEffect, 2f);
             
             //Destroy Powerup
             Destroy(gameObject);

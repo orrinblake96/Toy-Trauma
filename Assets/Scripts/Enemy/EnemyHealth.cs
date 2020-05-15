@@ -31,6 +31,8 @@ namespace Enemy
         private PlayerMovement _playerMovement;
         private PlayerKillstreak _killstreak;
         private ScoreManager _scoreManager;
+        private bool _isHealthDropGameObjectNull;
+        private bool _isSpeedDropGameObjectNull;
 
         private void Awake()
         {
@@ -44,6 +46,8 @@ namespace Enemy
             _enemyHealthBar = healthBar.GetComponent<EnemyHealthBar>();
             _killstreak = GameObject.Find("KillstreakCounter").GetComponent<PlayerKillstreak>();
             _scoreManager = GameObject.Find("UI/HUDCanvas/ScoreText").GetComponent<ScoreManager>();
+            _isHealthDropGameObjectNull = GameObject.Find("healthDrop(Clone)") == null;
+            _isSpeedDropGameObjectNull = GameObject.Find("speedDrop(Clone)") == null;
             
             
             _enemyHealthBar.SetMaxHealth(startingHealth);
@@ -95,13 +99,13 @@ namespace Enemy
             
             
             //power-up drop chance
-            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 7) && (_playerHealth.currentHealth < 40) )
+            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 6) && (_playerHealth.currentHealth < 50) && _isHealthDropGameObjectNull)
             {
                 FindObjectOfType<AudioManager>().Play("zombunnyDeath");
                 Instantiate(healthPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             } 
             
-            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 7) && (_playerMovement.speed <= 6))
+            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 6) && (_playerMovement.speed <= 6) && _isSpeedDropGameObjectNull)
             {
                 FindObjectOfType<AudioManager>().Play("zombearDeath");
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
