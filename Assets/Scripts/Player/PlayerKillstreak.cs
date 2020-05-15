@@ -15,7 +15,7 @@ namespace Player
         private void Start()
         {
             _playerShooting = GameObject.Find("GunBarrelEnd").GetComponent<PlayerShooting>();
-            _slowTimeManager = GameObject.Find("AudioManager").GetComponent<SlowTimeManager>();
+            _slowTimeManager = GameObject.Find("SlowtimeManager").GetComponent<SlowTimeManager>();
         }
 
         public void KillstreakCounter()
@@ -30,7 +30,7 @@ namespace Player
             
             if (currentSlowtimeKillStreak == 10 && _slowTimeManager.slowtime == false)
             {
-                Debug.Log("=========================== SLOWED ============================");
+                Debug.Log("=========================== Kills Reached ============================");
                 _slowTimeManager.slowtime = true;
                 _slowTimeManager.ShowHourglassUi();
                 currentSlowtimeKillStreak = 1;
