@@ -20,7 +20,7 @@ namespace Managers
 
         private void Start()
         {
-            _sources = GetComponents<AudioSource>();
+            _sources = GameObject.Find("AudioManager").GetComponents<AudioSource>();
             _currentStreak = GameObject.Find("KillstreakCounter").GetComponent<PlayerKillstreak>();
             _pauseMenuManager = GameObject.Find("PauseCanvas").GetComponent<PauseMenuManager>();
             _hourglassUi = GameObject.Find("UI/PowerUpsCanvas/Hourglass");
@@ -31,6 +31,7 @@ namespace Managers
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && slowtime)
             {
+                Debug.Log("=========================== Time Slowed ============================");
                 slowtime = false;
                 SlowMotion();
                 _hourglassUi.SetActive(false);
@@ -54,6 +55,7 @@ namespace Managers
 
         public void ShowHourglassUi()
         {
+            Debug.Log("=========================== Hour Glass Activated ============================");
             _hourglassUi.SetActive(true);
         }
 
