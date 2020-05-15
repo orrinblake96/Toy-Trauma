@@ -28,9 +28,8 @@ namespace Player
                 currentForcefieldKillStreak = 1;
             }
             
-            if (currentSlowtimeKillStreak == 10 && _slowTimeManager.slowtime == false)
+            if (currentSlowtimeKillStreak == 31 && _slowTimeManager.slowtime == false)
             {
-                Debug.Log("=========================== Kills Reached ============================");
                 _slowTimeManager.slowtime = true;
                 _slowTimeManager.ShowHourglassUi();
                 currentSlowtimeKillStreak = 1;

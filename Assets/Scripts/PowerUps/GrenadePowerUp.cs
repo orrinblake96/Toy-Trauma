@@ -60,7 +60,7 @@ namespace PowerUps
                 }
             }
 
-            CameraShaker.Instance.ShakeOnce(4f, 3f, .05f, 1f);
+            CameraShaker.Instance.ShakeOnce(3f, 3f, .05f, 1f);
             FindObjectOfType<AudioManager>().Play("Grenade");
             
             Destroy(gameObject);

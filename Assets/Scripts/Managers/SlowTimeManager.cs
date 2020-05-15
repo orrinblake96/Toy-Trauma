@@ -31,7 +31,6 @@ namespace Managers
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && slowtime)
             {
-                Debug.Log("=========================== Time Slowed ============================");
                 slowtime = false;
                 SlowMotion();
                 _hourglassUi.SetActive(false);
@@ -55,7 +54,6 @@ namespace Managers
 
         public void ShowHourglassUi()
         {
-            Debug.Log("=========================== Hour Glass Activated ============================");
             _hourglassUi.SetActive(true);
         }
 
