@@ -4,12 +4,13 @@ using Enemy;
 using UnityEngine;
 using UnityEngine.UI;
 using EZCameraShake;
+using UnityEngine.SocialPlatforms;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
     public class PlayerShooting : MonoBehaviour
     {
-        public int damagePerShot = 20;
         public float timeBetweenBullets = 0.15f;
         public float timeBetweenGrenades = 1f;
         public float range = 100f;
@@ -112,7 +113,7 @@ namespace Player
             if (Physics.Raycast(_shootRay, out _shootHit, range, _shootableMask))
             {
                 EnemyHealth enemyHealth = _shootHit.collider.GetComponent<EnemyHealth>();
-                if(enemyHealth != null) enemyHealth.TakeDamage(damagePerShot, _shootHit.point);
+                if(enemyHealth != null) enemyHealth.TakeDamage(Random.Range(15, 20), _shootHit.point);
                 _gunLine.SetPosition(1, _shootHit.point);
                 
             }

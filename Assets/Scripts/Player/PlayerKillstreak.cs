@@ -22,13 +22,13 @@ namespace Player
         {
             currentForcefieldKillStreak += 1;
             currentSlowtimeKillStreak += 1;
-            if (currentForcefieldKillStreak == 26 && !_playerShooting.setForceField)
+            if (currentForcefieldKillStreak == 41 && !_playerShooting.setForceField)
             {
                 _playerShooting.setForceField = true;
                 currentForcefieldKillStreak = 1;
             }
             
-            if (currentSlowtimeKillStreak == 31 && _slowTimeManager.slowtime == false)
+            if (currentSlowtimeKillStreak == 36 && _slowTimeManager.slowtime == false)
             {
                 _slowTimeManager.slowtime = true;
                 _slowTimeManager.ShowHourglassUi();

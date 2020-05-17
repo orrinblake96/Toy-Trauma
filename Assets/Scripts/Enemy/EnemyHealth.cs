@@ -99,19 +99,19 @@ namespace Enemy
             
             
             //power-up drop chance
-            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 6) && (_playerHealth.currentHealth < 50) && _isHealthDropGameObjectNull)
+            if (gameObject.name=="Zombunny(Clone)" && (Random.Range(0, 10) > 5) && (_playerHealth.currentHealth < 50) && _isHealthDropGameObjectNull)
             {
                 FindObjectOfType<AudioManager>().Play("zombunnyDeath");
                 Instantiate(healthPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             } 
             
-            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 6) && (_playerMovement.speed <= 6) && _isSpeedDropGameObjectNull)
+            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 5) && (_playerMovement.speed <= 6) && _isSpeedDropGameObjectNull)
             {
                 FindObjectOfType<AudioManager>().Play("zombearDeath");
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             }
             
-            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 7))
+            if (gameObject.name == "Hellephant(Clone)" && (Random.Range(0, 10) > 5))
             {
                 FindObjectOfType<AudioManager>().Play("hellephantDeath");
                 Instantiate(grenadePowerup, transform.position + Vector3.up, transform.rotation);
@@ -124,7 +124,7 @@ namespace Enemy
             GetComponent<Rigidbody>().isKinematic = true;
             _isSinking = true;
             ScoreManager.score += scoreValue;
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 2f);
         }
     }
 }
