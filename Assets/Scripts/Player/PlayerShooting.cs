@@ -33,6 +33,8 @@ namespace Player
         private AudioSource _gunAudio;
         private Light _gunLight;
         private float _effectsDisplayTime = 0.2f;
+        private int _damageAmountLower = 15;
+        private int _damageAmountHigher = 20;
 
         private void Awake()
         {
@@ -113,7 +115,7 @@ namespace Player
             if (Physics.Raycast(_shootRay, out _shootHit, range, _shootableMask))
             {
                 EnemyHealth enemyHealth = _shootHit.collider.GetComponent<EnemyHealth>();
-                if(enemyHealth != null) enemyHealth.TakeDamage(Random.Range(15, 20), _shootHit.point);
+                if(enemyHealth != null) enemyHealth.TakeDamage(Random.Range(_damageAmountLower, _damageAmountHigher), _shootHit.point);
                 _gunLine.SetPosition(1, _shootHit.point);
                 
             }
@@ -139,6 +141,20 @@ namespace Player
         {
             _gunLine.enabled = false;
             _gunLight.enabled = false;
+        }
+
+        public void IncreaseDamageAmount()
+        {
+            Debug.Log("higher");
+            _damageAmountLower = 25;
+            _damageAmountHigher = 30;
+        }
+        
+        public void DecreaseDamageAmount()
+        {
+            Debug.Log("Lower");
+            _damageAmountLower = 15;
+            _damageAmountHigher = 20;
         }
     }
 }

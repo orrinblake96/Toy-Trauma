@@ -1358,55 +1358,6 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 0
     value: 39.81
---- !u!114 &-1338660736520759739
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
-  m_Name: AmbientOcclusion
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  mode:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 0.95
-  color:
-    overrideState: 0
-    value: {r: 0, g: 0, b: 0, a: 1}
-  ambientOnly:
-    overrideState: 0
-    value: 1
-  noiseFilterTolerance:
-    overrideState: 0
-    value: 0
-  blurTolerance:
-    overrideState: 0
-    value: -4.6
-  upsampleTolerance:
-    overrideState: 0
-    value: -12
-  thicknessModifier:
-    overrideState: 0
-    value: 1
-  directLightingStrength:
-    overrideState: 0
-    value: 0
-  radius:
-    overrideState: 0
-    value: 0.25
-  quality:
-    overrideState: 0
-    value: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,8 +1374,6 @@ MonoBehaviour:
   - {fileID: -6093652960094464995}
   - {fileID: -8778348826824202012}
   - {fileID: 436625805112926704}
-  - {fileID: 3845565738590039993}
-  - {fileID: -1338660736520759739}
 --- !u!114 &436625805112926704
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1452,10 +1401,10 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.53
+    value: 0.535
   smoothness:
     overrideState: 1
-    value: 0.507
+    value: 0.46
   roundness:
     overrideState: 1
     value: 1
@@ -1469,31 +1418,3 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
---- !u!114 &3845565738590039993
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
-  m_Name: Grain
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  colored:
-    overrideState: 0
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 0.238
-  size:
-    overrideState: 1
-    value: 0.84
-  lumContrib:
-    overrideState: 0
-    value: 0

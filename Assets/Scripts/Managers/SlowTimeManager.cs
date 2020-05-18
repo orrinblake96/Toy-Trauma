@@ -45,7 +45,7 @@ namespace Managers
                 {
                     var pitch = clip.pitch;
                     pitch += (1f/ slowdownLength) * Time.unscaledDeltaTime;
-                    clip.pitch = pitch;
+                    clip.pitch = pitch; 
                     clip.pitch = Mathf.Clamp(pitch, 0f, 1f);
                 } 
             }

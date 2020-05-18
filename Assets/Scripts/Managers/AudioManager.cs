@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour
             if (_currentSceneName == "MainLevel")
             {
                 Play("Theme");
+                Play("SurviveTheNight");
             }
             else
             {
@@ -62,19 +63,6 @@ public class AudioManager : MonoBehaviour
             }
             
         }
-    }
-
-    private void Start()
-    {
-//        _currentSceneName = SceneManager.GetActiveScene().name;
-//        if (_currentSceneName == "MainLevel")
-//        {
-//            Play("Theme");
-//        }
-//        else
-//        {
-//            Stop("Theme");
-//        }
     }
 
     public void Play (string name)

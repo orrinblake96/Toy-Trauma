@@ -28,7 +28,7 @@ namespace Player
                 currentForcefieldKillStreak = 1;
             }
             
-            if (currentSlowtimeKillStreak == 36 && _slowTimeManager.slowtime == false)
+            if (currentSlowtimeKillStreak == 46 && _slowTimeManager.slowtime == false)
             {
                 _slowTimeManager.slowtime = true;
                 _slowTimeManager.ShowHourglassUi();

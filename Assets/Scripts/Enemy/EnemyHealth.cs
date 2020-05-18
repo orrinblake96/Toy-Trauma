@@ -105,7 +105,7 @@ namespace Enemy
                 Instantiate(healthPowerUpPrefab, transform.position + Vector3.up, transform.rotation);
             } 
             
-            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 6) && (_playerMovement.speed <= 6) && _isSpeedDropGameObjectNull)
+            if (gameObject.name == "ZomBear(Clone)" && (Random.Range(0, 10) > 7) && (_playerMovement.speed <= 6) && _isSpeedDropGameObjectNull)
             {
                 FindObjectOfType<AudioManager>().Play("zombearDeath");
                 Instantiate(speedPowerUpPrefab, transform.position + Vector3.up, transform.rotation);

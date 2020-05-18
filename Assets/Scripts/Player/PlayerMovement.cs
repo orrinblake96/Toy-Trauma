@@ -7,13 +7,13 @@ namespace Player
     {
         public float speed = 6.0f;
         public GameObject speedPickupEffect;
+        public PlayerShooting playerShooting;
 
         private Vector3 _movement;
         private Animator _anim;
         private Rigidbody _playerRigidbody;
         private int _floorMask;
         private float _camRayLength = 100.0f;
-
         private GameObject _speedEffect;
 
         private void Awake()
@@ -76,7 +76,8 @@ namespace Player
             FindObjectOfType<AudioManager>().Play("Powerup");
 
             //Player Ability
-            speed += 10.0f;
+            speed += 8.0f;
+            playerShooting.IncreaseDamageAmount();
             
             //Destroy Powerup
             Destroy(powerupBox);
@@ -85,7 +86,8 @@ namespace Player
             
             //Wait for set time, then return to normal
             yield return new WaitForSeconds(10);
-            speed -= 10.0f;
+            speed -= 8.0f;
+            playerShooting.DecreaseDamageAmount();
         }
     }
 }
