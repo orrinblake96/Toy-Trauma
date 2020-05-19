@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6405282232913194194}
   - component: {fileID: 6405282232913194195}
-  - component: {fileID: 1080033363}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -61,8 +60,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: 99ea4dd429c2a4c2c87159a368021b52, type: 3}
-    volume: 0.2
-    pitch: 0.71
+    volume: 0.15
+    pitch: 1
     loop: 1
     mixerGroup: {fileID: 24300000, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
     source: {fileID: 0}
@@ -103,7 +102,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: zombunnyHurt
     clip: {fileID: 8300000, guid: 7a41477da86574671812dc3c19399e24, type: 3}
-    volume: 0.3
+    volume: 0.15
     pitch: 1
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
@@ -117,7 +116,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: zombearHurt
     clip: {fileID: 8300000, guid: a9f222a70a2f24786b591e958a4e4310, type: 3}
-    volume: 0.3
+    volume: 0.15
     pitch: 1
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
@@ -130,8 +129,8 @@ MonoBehaviour:
     mixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
     source: {fileID: 0}
   - name: hellephantHurt
-    clip: {fileID: 8300000, guid: 05c7f6e1bf35c4118a23777eb60fce4e, type: 3}
-    volume: 0.3
+    clip: {fileID: 8300000, guid: 5bb292a4792d1473ca1108236084b996, type: 3}
+    volume: 0.15
     pitch: 1
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
@@ -143,18 +142,17 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
     source: {fileID: 0}
---- !u!114 &1080033363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6405282232913194192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9d84eb29ad242cfa869d3d7a393e25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slowdownFactor: 0.05
-  slowdownLength: 4
-  slowtime: 0
+  - name: SurviveTheNight
+    clip: {fileID: 8300000, guid: ca9a45aa2fc4e4ca9bf76f949d637bb6, type: 3}
+    volume: 0.9
+    pitch: 0.96
+    loop: 0
+    mixerGroup: {fileID: 24300000, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
+    source: {fileID: 0}
+  - name: MockingDeathClip
+    clip: {fileID: 8300000, guid: 9a88f08131d624ad7a3e983bbb162925, type: 3}
+    volume: 0.9
+    pitch: 0.96
+    loop: 0
+    mixerGroup: {fileID: 24300000, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
+    source: {fileID: 0}

@@ -92,6 +92,8 @@ namespace Player
 
             _playerMovement.enabled = false;
             _playerShooting.enabled = false;
+            
+            FindObjectOfType<AudioManager>().Play("MockingDeathClip");
         }
     }
 }
